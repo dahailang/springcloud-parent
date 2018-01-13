@@ -11,7 +11,7 @@ spring:
     schema: classpath:schema.sql
     data: classpath:data.sql
   application:
-    name: microservice-provider-user
+    name: springcloud-provider #全部小写
 logging:
   level:
     root: INFO
@@ -19,3 +19,11 @@ logging:
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
     org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
     com.itmuch: DEBUG
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://user:password123@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+ 
