@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.sitech.springcloud</groupId>
 	<artifactId>springcloud-parent</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>${project.version}</version>
 	<packaging>pom</packaging>
 	<modules>
 		<module>springcloud-provider</module>
@@ -13,6 +13,8 @@
 	<properties>
 		<!-- Generic properties -->
 		<java.version>1.8</java.version>
+		<!-- <project.version>0.0.1-SNAPSHOT</project.version> -->
+		<project.version>0.0.1-RELEASES</project.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<spring-boot.version>1.5.8.RELEASE</spring-boot.version>

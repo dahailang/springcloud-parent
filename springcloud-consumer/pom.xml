@@ -3,7 +3,7 @@
   <parent>
     <groupId>com.sitech.springcloud</groupId>
     <artifactId>springcloud-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${project.version}</version>
   </parent>
   <artifactId>springcloud-consumer</artifactId>
   <packaging>war</packaging>
