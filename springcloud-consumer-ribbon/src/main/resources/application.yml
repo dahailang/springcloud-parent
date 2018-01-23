@@ -10,4 +10,9 @@ eureka:
   instance:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+
+#ribbon.eureka.enabled: false  ##Use Ribbon Without Eureka
+#springcloud-provider.ribbon.listOfServers: 172.21.10.184:7903
+#springcloud-provider-ribbon-random.ribbon.listOfServers: 172.21.10.184:7901 
+
  

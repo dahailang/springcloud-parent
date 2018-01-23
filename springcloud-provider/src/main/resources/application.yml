@@ -1,5 +1,5 @@
 server:
-  port: 7900
+  port: 7901
 spring:
   jpa:
     generate-ddl: false
@@ -11,7 +11,8 @@ spring:
     schema: classpath:schema.sql
     data: classpath:data.sql
   application:
-    name: springcloud-provider #全部小写
+    #name: springcloud-provider #全部小写
+    name: springcloud-provider-ribbon-random #全部小写
 logging:
   level:
     root: INFO
@@ -22,7 +23,8 @@ logging:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://user:password123@localhost:8761/eureka
+      defaultZone: http://user:password123@172.21.10.184:8761/eureka ##公司环境
+#      defaultZone: http://user:password123@localhost:8761/eureka ##本地环境
   instance:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}

@@ -7,8 +7,11 @@ security:
 server:
   port: 8761
 eureka:
+  environment: production   ##System Status environment
+  datacenter: cloud         ##System Status datacenter
   client:
     register-with-eureka: false
     fetch-registry: false
     service-url:
       default-Zone: http://user:password123@localhost:8761/eureka
+  server.enable-self-preservation: false ##关闭自保护模式生产上禁用

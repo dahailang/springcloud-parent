@@ -17,4 +17,63 @@
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 	</dependencies>
+	<build>
+		<!-- spring-boot-maven-plugin 可以生成可执行jar包 -->
+		<plugins>
+			<!-- 用于生成可执行jar包 -->
+			<!-- 
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>  
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.6</version>
+                <configuration>  
+                    <archive>  
+						<manifest>  
+							<mainClass>com.sitech.cloud.SpringCloudEurekaApplication</mainClass>入口程序  
+							<addClasspath>true</addClasspath>添加依赖jar路径  
+                            <classpathPrefix>lib/</classpathPrefix>  
+						</manifest>  
+                    </archive>  
+                </configuration>  
+            </plugin>
+             -->
+             <!-- 解决jar包依赖问题 -->
+             <!-- 
+            <plugin>  
+	            <groupId>org.apache.maven.plugins</groupId>  
+	            <artifactId>maven-dependency-plugin</artifactId>  
+	            <version>2.10</version>  
+	            <executions>  
+	                <execution>  
+	                    <id>copy-dependencies</id>  
+	                    <phase>package</phase>  
+	                    <goals>  
+	                        <goal>copy-dependencies</goal>  
+	                    </goals>  
+	                    <configuration>  
+	                        <outputDirectory>${project.build.directory}/lib</outputDirectory>  
+	                    </configuration>  
+	                </execution>  
+	            </executions>
+	        </plugin>
+              -->
+		</plugins>
+		<resources>
+			<resource>
+		        <directory>${project.basedir}/src/main/resources</directory>
+		        <filtering>true</filtering>
+		        <excludes>
+		        	<exclude>bin/*</exclude>
+		        </excludes>
+		    </resource>
+		    <resource>
+				<targetPath>${project.build.directory}/bin</targetPath>
+				<directory>src/main/resources/bin</directory>
+				<filtering>false</filtering>
+				<includes>
+					<include>*.sh</include>
+				</includes>
+			</resource>
+		</resources>
+	</build>
 </project>

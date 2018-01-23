@@ -5,9 +5,11 @@
     <artifactId>springcloud-parent</artifactId>
     <version>${project.version}</version>
   </parent>
-  <artifactId>springcloud-consumer</artifactId>
-  <packaging>jar</packaging>
-	<dependencies>
+  <artifactId>springcloud-consumer-feign</artifactId>
+  <packaging>war</packaging>
+  <name>springcloud-consumer-feign</name>
+  <description>springcloud-consumer-feign</description>
+  <dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -24,18 +26,6 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-feign</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-hystrix</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-turbine</artifactId>
 		</dependency>
 	</dependencies>
 </project>
